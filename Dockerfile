@@ -9,6 +9,7 @@ RUN npm ci
 # Bundle app source
 COPY . .
 RUN ionic build
+RUN No
 ## Run
 FROM nginx:alpine
 # Bind the port that the image will run on
