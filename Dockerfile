@@ -6,6 +6,8 @@ WORKDIR /usr/src/app
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
 COPY package*.json ./
 RUN npm ci
+# Manually install @angular/cli if it's not included in the project
+RUN npm install -g @angular/cli --no-confirm
 # Bundle app source
 COPY . .
 RUN ionic build
